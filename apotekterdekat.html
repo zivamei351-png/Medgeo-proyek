@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apotek Terdekat | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <div class="container-navbar">
+        <h1 class="h1-navbar">Medical Geographic</h1>
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="beranda.html" class="a">Home</a></li>
+            <li class="li-navbar"><a href="apotekterdekat.html" class="a is-active">Apotik</a></li>
+            <li class="li-navbar"><a href="katalogbelanja.html" class="a">Katalog</a></li>
+        </ul>
+    </div>
+
+    <main class="apotek-page">
+        <section class="apotek-shell">
+            <div id="not-registered-message" class="access-card" style="display: none;">
+                <span class="access-eyebrow">Akses Dibatasi</span>
+                <h2>Fitur apotek khusus untuk pengguna terdaftar</h2>
+                <p>Daftarkan akun Anda untuk membuka pencarian apotek terdekat, melihat peta lokasi, dan mengakses layanan MedGeo dengan lebih lengkap.</p>
+                <a href="index.html" class="button primary access-button">Login atau Daftar</a>
+            </div>
+
+            <div id="registered-content" class="apotek-dashboard" style="display: none;">
+                <div id="user-info-banner" class="user-banner">
+                    <div class="user-banner-copy">
+                        <span class="access-eyebrow">Akun Aktif</span>
+                        <h2>Apotek terdekat dari lokasi Anda</h2>
+                        <p><strong id="user-fullname"></strong> terhubung dari <span id="user-location"></span></p>
+                    </div>
+                </div>
+
+                <section class="apotek-hero-card">
+                    <div class="apotek-hero-copy">
+                        <span class="access-eyebrow">Katalog Apotek</span>
+                        <h2>Rekomendasi apotek otomatis dari daerah pendaftaran Anda</h2>
+                        <p>MedGeo membuat rekomendasi apotek dengan logika JavaScript lokal berdasarkan provinsi, kota, dan kecamatan yang Anda isi saat mendaftar.</p>
+                    </div>
+                    <div class="apotek-summary-grid">
+                        <article class="apotek-summary-item">
+                            <strong id="pharmacy-count">0</strong>
+                            <span>Rekomendasi aktif</span>
+                        </article>
+                        <article class="apotek-summary-item">
+                            <strong id="nearest-distance">-</strong>
+                            <span>Jarak terdekat</span>
+                        </article>
+                        <article class="apotek-summary-item">
+                            <strong>Basis daerah</strong>
+                            <span id="search-source-detail">Menunggu data pengguna</span>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="apotek-map-panel apotek-summary-panel">
+                        <div class="section-heading">
+                            <h3>Ringkasan Area</h3>
+                            <p>Lihat area layanan dan fokus rekomendasi apotek berdasarkan data daerah akun Anda.</p>
+                        </div>
+                        <div class="apotek-map apotek-local-panel">
+                            <div class="apotek-local-card">
+                                <span class="apotek-local-label">Provinsi</span>
+                                <strong id="local-province">-</strong>
+                            </div>
+                            <div class="apotek-local-card">
+                                <span class="apotek-local-label">Kota / Kabupaten</span>
+                                <strong id="local-city">-</strong>
+                            </div>
+                            <div class="apotek-local-card">
+                                <span class="apotek-local-label">Kecamatan</span>
+                                <strong id="local-district">-</strong>
+                            </div>
+                            <div class="apotek-local-card">
+                                <span class="apotek-local-label">Fokus layanan</span>
+                                <strong id="local-focus">-</strong>
+                            </div>
+                        </div>
+                </section>
+
+                    <section class="apotek-list-panel apotek-listing-panel">
+                        <div class="section-heading">
+                            <h3>Rekomendasi Apotek</h3>
+                            <p>Pilih apotek rekomendasi yang paling dekat dan paling cocok untuk kebutuhan daerah Anda.</p>
+                        </div>
+                        <div id="registration-welcome" class="apotek-status success" style="display: none;">Pendaftaran berhasil. Ini rekomendasi apotek yang dibuat langsung dari daerah akun Anda.</div>
+                        <div id="pharmacy-status" class="apotek-status">Memuat rekomendasi apotek dari data daerah akun...</div>
+                        <div id="apotek-list" class="apotek-list"></div>
+                    </section>
+            </div>
+        </section>
+    </main>
+
+<script src="apotekterdekat.js"></script>
+</body>
+</html>

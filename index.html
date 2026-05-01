@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk Akun | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+</head>
+<body class="register-portal-body">
+    <main class="register-portal-page">
+        <div class="register-portal-background"></div>
+        <div class="register-portal-overlay"></div>
+
+        <section class="register-portal-shell">
+            <div class="register-portal-emblem">
+                <img src="medgeo-logo.png" alt="Logo MedGeo" class="portal-logo-image register-portal-logo-image">
+            </div>
+
+            <section class="register-portal-card">
+                <div class="register-portal-card-header">
+                    <h1>Masuk ke Akun MedGeo</h1>
+                    <p>Gunakan email dan password akun Anda untuk lanjut ke beranda utama MedGeo.</p>
+                </div>
+
+                <div id="loginMessage" class="auth-message" style="display:none;" role="alert"></div>
+                <div id="loginRegisteredHint" class="login-portal-hint" style="display:none;"></div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required placeholder="Masukkan email akun Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-container">
+                            <input type="password" id="loginPassword" required placeholder="Masukkan password akun Anda">
+                            <span class="password-toggle" onclick="togglePassword('loginPassword')">
+                                <i class="eye-icon" id="loginPassword-eye">Lihat</i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="signin-btn">Masuk</button>
+                </form>
+
+                <div class="divider">
+                    <span>atau</span>
+                </div>
+
+                <div class="login-portal-links">
+                    <a href="signin.html">Belum punya akun? Daftar sekarang</a>
+                    <a href="beranda.html">Sudah login? Buka beranda</a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="medgeo-login.js"></script>
+</body>
+</html>

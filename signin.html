@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="config.js"></script>
+</head>
+<body class="register-portal-body">
+    <main class="register-portal-page">
+        <div class="register-portal-background"></div>
+        <div class="register-portal-overlay"></div>
+
+        <section class="register-portal-shell">
+            <div class="register-portal-emblem">
+                <img src="medgeo-logo.png" alt="Logo MedGeo" class="portal-logo-image register-portal-logo-image">
+            </div>
+
+            <section class="register-portal-card">
+                <div class="register-portal-card-header">
+                    <h1>Buat Akun MedGeo</h1>
+                    <p>Lengkapi data di bawah ini untuk membuat akun baru dan langsung masuk ke beranda MedGeo.</p>
+                </div>
+
+                <form id="signupForm">
+                    <div id="registrationMessage" role="alert" style="display:none; margin-top:18px; padding:14px 16px; border-radius:14px; background:#e8f7f4; color:#1b5e20; border:1px solid #a5d6a7;"></div>
+
+                    <div class="form-group">
+                        <label for="fullname">Nama Lengkap</label>
+                        <input type="text" id="fullname" name="to_name" required placeholder="Masukkan nama lengkap Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="to_email" required placeholder="Masukkan email Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="province">Provinsi</label>
+                        <select id="province" name="province" required>
+                            <option value="">Pilih Provinsi</option>
+                            <option value="Aceh">Aceh</option>
+                            <option value="Sumatera Utara">Sumatera Utara</option>
+                            <option value="Sumatera Barat">Sumatera Barat</option>
+                            <option value="Riau">Riau</option>
+                            <option value="Jambi">Jambi</option>
+                            <option value="Sumatera Selatan">Sumatera Selatan</option>
+                            <option value="Bengkulu">Bengkulu</option>
+                            <option value="Lampung">Lampung</option>
+                            <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+                            <option value="Kepulauan Riau">Kepulauan Riau</option>
+                            <option value="DKI Jakarta">DKI Jakarta</option>
+                            <option value="Jawa Barat">Jawa Barat</option>
+                            <option value="Jawa Tengah">Jawa Tengah</option>
+                            <option value="DI Yogyakarta">DI Yogyakarta</option>
+                            <option value="Jawa Timur">Jawa Timur</option>
+                            <option value="Banten">Banten</option>
+                            <option value="Bali">Bali</option>
+                            <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                            <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                            <option value="Kalimantan Barat">Kalimantan Barat</option>
+                            <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                            <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                            <option value="Kalimantan Timur">Kalimantan Timur</option>
+                            <option value="Kalimantan Utara">Kalimantan Utara</option>
+                            <option value="Sulawesi Utara">Sulawesi Utara</option>
+                            <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                            <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                            <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                            <option value="Gorontalo">Gorontalo</option>
+                            <option value="Sulawesi Barat">Sulawesi Barat</option>
+                            <option value="Maluku">Maluku</option>
+                            <option value="Maluku Utara">Maluku Utara</option>
+                            <option value="Papua Barat">Papua Barat</option>
+                            <option value="Papua">Papua</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Kota / Kabupaten</label>
+                        <select id="city" name="city" required>
+                            <option value="">Pilih Kota / Kabupaten</option>
+                            <option value="Jakarta Pusat">Jakarta Pusat</option>
+                            <option value="Jakarta Utara">Jakarta Utara</option>
+                            <option value="Jakarta Barat">Jakarta Barat</option>
+                            <option value="Jakarta Selatan">Jakarta Selatan</option>
+                            <option value="Jakarta Timur">Jakarta Timur</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="district">Kecamatan</label>
+                        <select id="district" name="district" required>
+                            <option value="">Pilih Kecamatan</option>
+                            <option value="Tanah Abang">Tanah Abang</option>
+                            <option value="Menteng">Menteng</option>
+                            <option value="Senen">Senen</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Alamat Lengkap</label>
+                        <input type="text" id="address" name="address" required placeholder="Jalan, nomor rumah, gedung, dll">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postalCode">Kode Pos</label>
+                        <input type="text" id="postalCode" name="postalCode" required placeholder="Masukkan kode pos Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-container">
+                            <input type="password" id="password" name="password" required placeholder="Buat password Anda">
+                            <span class="password-toggle" onclick="togglePassword('password')">
+                                <i class="eye-icon" id="password-eye">Lihat</i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Konfirmasi Password</label>
+                        <div class="password-container">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Ketik ulang password Anda">
+                            <span class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                <i class="eye-icon" id="confirmPassword-eye">Lihat</i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="signupButton" class="signin-btn">Daftar Akun</button>
+                </form>
+
+                <div class="divider">
+                    <span>atau</span>
+                </div>
+
+                <div class="social-signin" id="google-signin-container">
+                    <button type="button" id="googleSignInBtn" class="google-btn" onclick="handleGoogleSignIn();">
+                        <img src="https://www.svgrepo.com/show/452224/google-color.svg" alt="Google logo">
+                        Daftar dengan Gmail
+                    </button>
+                </div>
+
+                <div class="login-portal-links">
+                    <a href="index.html">Sudah punya akun? Masuk</a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="signin-page.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

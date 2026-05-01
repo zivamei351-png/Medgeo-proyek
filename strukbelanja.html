@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struk Belanja | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+    <script src="medgeo-catalog-data.js"></script>
+</head>
+<body class="receipt-page-body">
+    <div class="container-navbar receipt-navbar">
+        <h1 class="h1-navbar">Medical Geographic</h1>
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="beranda.html" class="a">Home</a></li>
+            <li class="li-navbar"><a href="apotekterdekat.html" class="a">Apotik</a></li>
+            <li class="li-navbar"><a href="katalogbelanja.html" class="a">Katalog</a></li>
+            <li class="li-navbar"><a href="strukbelanja.html" class="a is-active">Struk</a></li>
+        </ul>
+    </div>
+
+    <main class="receipt-page">
+        <section class="receipt-shell">
+            <div id="receipt-empty-state" class="access-card" style="display: none;">
+                <span class="access-eyebrow">Struk Belum Ada</span>
+                <h2>Belum ada struk belanja yang dibuat</h2>
+                <p>Selesaikan checkout dari halaman kategori obat terlebih dahulu agar struk belanja bisa ditampilkan di sini.</p>
+                <a href="katalogbelanja.html" class="button primary access-button">Kembali ke Katalog</a>
+            </div>
+
+            <div id="receipt-content" class="receipt-dashboard" style="display: none;">
+                <div class="receipt-toolbar no-print">
+                    <a href="katalogbelanja.html" class="button secondary receipt-toolbar-button">Kembali ke Katalog</a>
+                    <button type="button" class="button secondary receipt-toolbar-button" onclick="printReceipt()">Cetak Struk</button>
+                    <button type="button" class="button secondary receipt-toolbar-button" onclick="downloadReceiptImage()">Download JPG</button>
+                    <button type="button" class="button primary receipt-toolbar-button" onclick="openPrintPreview()">Preview Cetak / Simpan PDF</button>
+                </div>
+
+                <article id="receipt-paper" class="receipt-paper">
+                    <header class="receipt-paper-header">
+                        <img src="medgeo-logo.png" alt="Logo MedGeo" class="receipt-logo-image">
+                        <div>
+                            <span class="receipt-paper-label">Medical Geographic</span>
+                            <h2>Struk Belanja</h2>
+                            <span class="receipt-section-label receipt-header-apotek-label">Apotek</span>
+                            <strong id="receipt-pharmacy-name">-</strong>
+                            <p id="receipt-pharmacy-address">-</p>
+                            <p id="receipt-meta-line">-</p>
+                        </div>
+                    </header>
+
+                    <div class="receipt-divider"></div>
+
+                    <section class="receipt-keyvals">
+                        <div class="receipt-keyval-row">
+                            <span>No. Struk</span>
+                            <strong id="receipt-number">-</strong>
+                        </div>
+                        <div class="receipt-keyval-row">
+                            <span>Checkout</span>
+                            <strong id="receipt-created-at">-</strong>
+                        </div>
+                        <div class="receipt-keyval-row">
+                            <span>Pembayaran</span>
+                            <strong id="receipt-payment-method">-</strong>
+                        </div>
+                        <div class="receipt-keyval-row">
+                            <span>Metode Pesanan</span>
+                            <strong id="receipt-fulfillment-method">-</strong>
+                        </div>
+                    </section>
+
+                    <section class="receipt-store-block">
+                        <div>
+                            <span class="receipt-section-label">Penerima</span>
+                            <strong id="receipt-customer-name">-</strong>
+                            <p id="receipt-customer-phone">-</p>
+                        </div>
+                    </section>
+
+                    <div class="receipt-divider"></div>
+
+                    <section class="receipt-items-block">
+                        <div class="receipt-items-head">
+                            <span>Produk</span>
+                            <span>Qty</span>
+                            <span>Harga</span>
+                            <span>Subtotal</span>
+                        </div>
+                        <div id="receipt-items-list" class="receipt-items-list"></div>
+                    </section>
+
+                    <div class="receipt-divider"></div>
+
+                    <section class="receipt-total-block">
+                        <div class="receipt-total-row">
+                            <span>Subtotal</span>
+                            <strong id="receipt-subtotal">Rp0</strong>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span>Biaya Layanan</span>
+                            <strong id="receipt-service-fee">Rp0</strong>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span>Biaya Pengiriman</span>
+                            <strong id="receipt-delivery-fee">Rp0</strong>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span>Total Item</span>
+                            <strong id="receipt-total-items">0 item</strong>
+                        </div>
+                        <div class="receipt-total-row grand-total">
+                            <span>Total Bayar</span>
+                            <strong id="receipt-total-price">Rp0</strong>
+                        </div>
+                    </section>
+
+                    <section class="receipt-notes-block">
+                        <span class="receipt-section-label">Catatan Pesanan</span>
+                        <p id="receipt-order-notes">-</p>
+                    </section>
+
+                    <footer class="receipt-footer">
+                        <p>Terima kasih telah berbelanja di MedGeo.</p>
+                        <p>Simpan struk ini sebagai bukti transaksi Anda.</p>
+                    </footer>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="strukbelanja.js"></script>
+</body>
+</html>

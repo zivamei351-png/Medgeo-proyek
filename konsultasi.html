@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <div class="container-navbar">
+        <h1 class="h1-navbar">Medical Geographic</h1>
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="beranda.html" class="a">Home</a></li>
+            <li class="li-navbar"><a href="apotekterdekat.html" class="a">Apotik</a></li>
+            <li class="li-navbar"><a href="konsultasi.html" class="a is-active">Konsultasi</a></li>
+        </ul>
+    </div>
+
+    <main class="consultation-page">
+        <div id="consultationLanding">
+            <section class="hero">
+                <div class="hero-copy">
+                    <span class="eyebrow">Layanan Konsultasi</span>
+                    <h1>Beranda Konsultasi MedGeo</h1>
+                    <p>Dapatkan jawaban cepat tentang obat, gejala, dan layanan kesehatan dari tim kami. Klik tombol di bawah untuk membuka ruang chat khusus konsultasi.</p>
+                    <div class="hero-buttons">
+                        <button id="startConsultButton" type="button" class="button start">Mulai Konsultasi</button>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <h2>Keunggulan Konsultasi</h2>
+                    <ul>
+                        <li>💬 Langsung chat tanpa daftar</li>
+                        <li>⚡ Respon cepat dari tim MedGeo</li>
+                        <li>🗂️ Akses info obat & apotik seimbang</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="feature-intro">
+            <div class="feature-intro-inner">
+                <span class="eyebrow">Apa yang Bisa Anda Lakukan</span>
+                <h2>Konsultasi Obat dan Kesehatan</h2>
+                <p>Isi formulir konsultasi untuk mendapatkan saran dari tim medis atau informasi obat yang tepat untuk kebutuhan Anda.</p>
+            </div>
+        </section>
+
+        <section class="konsultasi-grid">
+            <div class="feature-card">
+                <h3>🩺 Konsultasi Obat</h3>
+                <p>Ajukan pertanyaan tentang dosis, efek samping, dan cara penggunaan obat.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💬 Saran Kesehatan</h3>
+                <p>Dapatkan rekomendasi ringan seputar gejala dan perawatan dasar yang aman.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📁 Riwayat Konsultasi</h3>
+                <p>Simpan catatan konsultasi Anda untuk referensi berikutnya.</p>
+            </div>
+        </section>
+        </div>
+
+        <section class="consultation-chat-section" id="consultationRoomSection" style="display:none;">
+            <div class="consultation-card chat-card">
+                <h2>Ruang Chat Konsultasi</h2>
+                <p>Anda kini berada di ruang chat khusus konsultasi. Tulis pertanyaan Anda, lalu tim MedGeo akan merespons segera.</p>
+                <div id="consultationStatus" style="display:none; margin-bottom:20px; padding:14px 16px; border-radius:12px; background:#e8f7f4; color:#1b5e20; border:1px solid #a5d6a7;"></div>
+
+                <div id="chatRoom" class="chat-room">
+                    <div class="chat-header">
+                        <div class="chat-header-top">
+                            <div>
+                                <h3>Chat Konsultasi MedGeo</h3>
+                                <p id="chatSubtitle">Mulai obrolan Anda sekarang.</p>
+                            </div>
+                            <span id="chatUserBadge" class="chat-user-badge">Pengguna MedGeo</span>
+                        </div>
+                        <div class="chat-toolbar">
+                            <button type="button" id="backToConsultationButton" class="chat-secondary-button">Kembali</button>
+                            <button type="button" id="clearChatButton" class="chat-secondary-button">Hapus Riwayat</button>
+                        </div>
+                    </div>
+                    <div class="chat-topic-panel">
+                        <p class="chat-topic-title">Topik cepat</p>
+                        <div class="chat-topic-list">
+                            <button type="button" class="chat-topic-chip" data-message="Halo, saya ingin konsultasi tentang dosis obat yang aman.">Dosis Obat</button>
+                            <button type="button" class="chat-topic-chip" data-message="Saya ingin bertanya tentang efek samping obat yang sedang saya konsumsi.">Efek Samping</button>
+                            <button type="button" class="chat-topic-chip" data-message="Saya butuh saran obat untuk gejala demam dan batuk.">Gejala Umum</button>
+                            <button type="button" class="chat-topic-chip" data-message="Saya ingin tahu apotek terdekat yang tersedia untuk kebutuhan saya.">Apotek Terdekat</button>
+                        </div>
+                    </div>
+                    <div id="chatMessages" class="chat-messages"></div>
+                    <form id="chatRoomForm" class="chat-input-area">
+                        <input type="text" id="chatInput" placeholder="Tulis pertanyaan Anda..." autocomplete="off" required>
+                        <button type="submit" class="signin-btn">Kirim</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

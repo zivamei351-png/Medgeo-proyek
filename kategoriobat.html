@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Obat | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+    <script src="medgeo-catalog-data.js"></script>
+</head>
+<body>
+    <div class="container-navbar">
+        <h1 class="h1-navbar">Medical Geographic</h1>
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="beranda.html" class="a">Home</a></li>
+            <li class="li-navbar"><a href="apotekterdekat.html" class="a">Apotik</a></li>
+            <li class="li-navbar"><a href="katalogbelanja.html" class="a">Katalog</a></li>
+        </ul>
+    </div>
+
+    <main class="category-page">
+        <section class="category-shell">
+            <div id="category-empty-state" class="access-card" style="display: none;">
+                <span class="access-eyebrow">Kategori Belum Dipilih</span>
+                <h2>Pilih kategori obat terlebih dahulu</h2>
+                <p>Kembali ke beranda katalog semua kategori untuk memilih kategori baru.</p>
+                <a href="katalogbelanja.html" class="button primary access-button">Kembali ke Semua Kategori</a>
+            </div>
+
+            <div id="category-content" class="category-dashboard" style="display: none;">
+                <section class="category-hero">
+                    <div class="category-hero-copy">
+                        <span class="access-eyebrow">Kategori Terpilih</span>
+                        <h1 id="category-title">Kategori Obat</h1>
+                        <p id="category-description">Daftar obat kategori ini akan tampil di sini.</p>
+                        <div class="category-hero-actions">
+                            <a href="katalogbelanja.html" class="button secondary">Kembali ke Semua Kategori</a>
+                        </div>
+                    </div>
+                    <div class="category-hero-panel">
+                        <article class="category-hero-stat">
+                            <span>Total Produk</span>
+                            <strong id="category-product-count">0 produk</strong>
+                        </article>
+                        <article class="category-hero-stat">
+                            <span>Produk Unggulan</span>
+                            <strong id="category-featured-count">0 rekomendasi</strong>
+                        </article>
+                        <article class="category-hero-stat">
+                            <span>Mulai Dari</span>
+                            <strong id="category-start-price">Rp0</strong>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="category-pharmacy-card" class="category-pharmacy-card" style="display: none;">
+                    <div>
+                        <span class="category-section-label">Apotek Terpilih</span>
+                        <strong id="category-pharmacy-name">-</strong>
+                        <p id="category-pharmacy-meta">-</p>
+                    </div>
+                </section>
+
+                <div class="category-layout">
+                    <section class="shopping-catalog-panel">
+                        <div class="section-heading">
+                            <h2>Daftar obat dalam kategori ini</h2>
+                            <p>Semua item obat pada kategori ini ditampilkan dalam kartu yang lebih besar supaya gambar produk lebih jelas dan pilihan obat lebih mudah dilihat.</p>
+                        </div>
+                        <div id="category-product-grid" class="shopping-product-grid category-product-grid-large"></div>
+                    </section>
+
+                    <aside id="shopping-cart-panel" class="shopping-cart-panel shopping-cart-panel-hidden">
+                        <div class="shopping-cart-panel-topbar">
+                            <span class="shopping-cart-panel-label">Keranjang Anda</span>
+                            <button type="button" class="shopping-cart-close-button" onclick="closeShoppingCart()" aria-label="Tutup keranjang">x</button>
+                        </div>
+                        <div class="section-heading">
+                            <h3>Keranjang Belanja</h3>
+                        </div>
+                        <div class="shopping-cart-hero">
+                            <div class="shopping-cart-hero-copy">
+                                <strong id="shopping-cart-pharmacy-name">Apotek pilihan Anda</strong>
+                                <p id="shopping-cart-state" class="shopping-cart-state">Belum ada produk di keranjang.</p>
+                            </div>
+                            <div class="shopping-cart-hero-badge">
+                                <span>Estimasi</span>
+                                <strong id="shopping-cart-estimate">Pilih produk</strong>
+                            </div>
+                        </div>
+                        <div class="shopping-cart-highlight-grid">
+                            <article class="shopping-cart-highlight-card">
+                                <span>Apotek</span>
+                                <strong id="shopping-cart-pharmacy-meta">-</strong>
+                            </article>
+                            <article class="shopping-cart-highlight-card">
+                                <span>Pesanan</span>
+                                <strong id="shopping-cart-total-preview-items">0 item</strong>
+                            </article>
+                            <article class="shopping-cart-highlight-card">
+                                <span>Total</span>
+                                <strong id="shopping-cart-total-preview">Rp0</strong>
+                            </article>
+                        </div>
+                        <div id="shopping-cart-list" class="shopping-cart-list"></div>
+                        <div class="shopping-cart-checkout-form">
+                            <div class="shopping-cart-form-group">
+                                <label for="shopping-payment-method">Metode Pembayaran</label>
+                                <select id="shopping-payment-method">
+                                    <option value="Transfer Bank">Transfer Bank</option>
+                                    <option value="E-Wallet">E-Wallet</option>
+                                    <option value="COD">COD</option>
+                                    <option value="QRIS">QRIS</option>
+                                </select>
+                            </div>
+                            <div class="shopping-cart-form-group">
+                                <label for="shopping-fulfillment-method">Metode Pesanan</label>
+                                <select id="shopping-fulfillment-method">
+                                    <option value="Ambil di Apotek">Ambil di Apotek</option>
+                                    <option value="Diantar Kurir">Diantar Kurir</option>
+                                    <option value="Same Day">Same Day</option>
+                                </select>
+                            </div>
+                            <div class="shopping-cart-form-group">
+                                <label for="shopping-customer-name">Nama Penerima</label>
+                                <input type="text" id="shopping-customer-name" placeholder="Nama penerima pesanan">
+                            </div>
+                            <div class="shopping-cart-form-group">
+                                <label for="shopping-customer-phone">No. Telepon</label>
+                                <input type="text" id="shopping-customer-phone" placeholder="Nomor aktif">
+                            </div>
+                            <div class="shopping-cart-form-group shopping-cart-form-group-full">
+                                <label for="shopping-order-notes">Catatan Pesanan</label>
+                                <textarea id="shopping-order-notes" rows="3" placeholder="Contoh: antar sore hari, siapkan tanpa kantong tambahan."></textarea>
+                            </div>
+                        </div>
+                        <div class="shopping-cart-summary">
+                            <div class="shopping-cart-summary-row">
+                                <span>Total Item</span>
+                                <strong id="shopping-cart-count">0 item</strong>
+                            </div>
+                            <div class="shopping-cart-summary-row">
+                                <span>Subtotal</span>
+                                <strong id="shopping-cart-subtotal">Rp0</strong>
+                            </div>
+                            <div class="shopping-cart-summary-row">
+                                <span>Biaya Layanan</span>
+                                <strong id="shopping-cart-service-fee">Rp0</strong>
+                            </div>
+                            <div class="shopping-cart-summary-row">
+                                <span>Biaya Pengiriman</span>
+                                <strong id="shopping-cart-delivery-fee">Rp0</strong>
+                            </div>
+                            <div class="shopping-cart-total">
+                                <span>Total</span>
+                                <strong id="shopping-cart-total">Rp0</strong>
+                            </div>
+                            <button type="button" class="shopping-checkout-button" onclick="checkoutShoppingCart()">Checkout Sekarang</button>
+                        </div>
+                    </aside>
+                    <div id="shopping-cart-backdrop" class="shopping-cart-backdrop shopping-cart-panel-hidden" onclick="closeShoppingCart()"></div>
+
+                    <button
+                        type="button"
+                        id="floating-cart-button"
+                        class="floating-cart-button"
+                        onclick="openShoppingCart()"
+                        hidden
+                        aria-label="Buka keranjang belanja"
+                    >
+                        <span class="floating-cart-button__emoji" aria-hidden="true"></span>
+                        <span id="floating-cart-count" class="floating-cart-button__count">0</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="kategoriobat.js"></script>
+</body>
+</html>

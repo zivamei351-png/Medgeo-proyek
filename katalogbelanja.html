@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Belanja | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+    <script src="medgeo-catalog-data.js"></script>
+</head>
+<body>
+    <div class="container-navbar">
+        <h1 class="h1-navbar">Medical Geographic</h1>
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="beranda.html" class="a">Home</a></li>
+            <li class="li-navbar"><a href="apotekterdekat.html" class="a">Apotik</a></li>
+            <li class="li-navbar"><a href="katalogbelanja.html" class="a is-active">Katalog</a></li>
+        </ul>
+    </div>
+
+    <main class="catalog-page">
+        <section class="catalog-shell">
+            <div id="catalog-empty-state" class="access-card" style="display: none;">
+                <span class="access-eyebrow">Pilih Apotek Dulu</span>
+                <h2>Belum ada apotek yang dipilih</h2>
+                <p>Buka halaman rekomendasi apotek lalu klik tombol pilih rekomendasi agar katalog kategori dibuat khusus untuk apotek tersebut.</p>
+                <a href="apotekterdekat.html" class="button primary access-button">Kembali ke Apotek</a>
+            </div>
+
+            <div id="catalog-content" class="catalog-dashboard" style="display: none;">
+                <section class="catalog-hero">
+                    <div class="catalog-hero-copy">
+                        <span class="access-eyebrow">Beranda Katalog</span>
+                        <h2 id="catalog-pharmacy-name">Semua kategori obat</h2>
+                        <p id="catalog-description">Pilih kategori obat yang ingin dibeli, lalu masuk ke halaman kategori tersebut untuk tambah keranjang dan checkout.</p>
+                        <div class="catalog-hero-actions">
+                            <a href="apotekterdekat.html" class="button secondary catalog-back-button">Ganti Apotek</a>
+                        </div>
+                    </div>
+                    <div class="catalog-hero-card">
+                        <span class="catalog-hero-label">Ringkasan Apotek</span>
+                        <strong id="catalog-pharmacy-distance">-</strong>
+                        <p id="catalog-pharmacy-meta">-</p>
+                    </div>
+                </section>
+
+                <div class="catalog-summary-grid">
+                    <article class="catalog-summary-item">
+                        <span>Alamat</span>
+                        <strong id="catalog-address">-</strong>
+                    </article>
+                    <article class="catalog-summary-item">
+                        <span>Jam Operasional</span>
+                        <strong id="catalog-hours">-</strong>
+                    </article>
+                    <article class="catalog-summary-item">
+                        <span>Status</span>
+                        <strong id="catalog-status">-</strong>
+                    </article>
+                </div>
+
+                <section class="consultation-link-panel catalog-browse-panel">
+                    <div class="section-heading">
+                        <h3>Semua Pilihan Kategori</h3>
+                        <p>Ini adalah beranda katalog utama. Cukup pilih satu kategori untuk masuk ke halaman obat yang sesuai.</p>
+                    </div>
+                    <div class="consultation-link-content">
+                        <div class="consultation-link-card">
+                            <span>Kategori Tersedia</span>
+                            <strong id="catalog-category-count">-</strong>
+                        </div>
+                        <div class="consultation-link-card">
+                            <span>Total Produk</span>
+                            <strong id="catalog-product-count">-</strong>
+                        </div>
+                        <div class="consultation-link-card">
+                            <span>Halaman Aktif</span>
+                            <strong>Beranda Semua Kategori</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="shopping-catalog-panel catalog-home-panel">
+                    <div class="catalog-section-top">
+                        <div class="section-heading">
+                            <h3>Pilih Kategori Obat</h3>
+                            <p>User cukup memilih kategori dari sini. Setelah itu, halaman kategori terpilih akan menampilkan daftar obat dan tombol tambah keranjang.</p>
+                        </div>
+                        <div class="catalog-product-hint">
+                            <span>Alur Belanja</span>
+                            <strong>Pilih kategori lalu mulai pesan</strong>
+                        </div>
+                    </div>
+                    <div id="shopping-category-strip" class="shopping-category-strip"></div>
+                    <div id="catalog-department-grid" class="catalog-department-grid"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script src="katalogbelanja.js"></script>
+</body>
+</html>

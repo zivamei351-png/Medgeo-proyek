@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lengkapi Alamat Google | MedGeo</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="auth.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <div class="container-navbar">
+        <h1 class="h1-navbar">Medical Geographic</h1>
+        <ul class="ul-navbar">
+            <li class="li-navbar"><a href="index.html" class="a">Login</a></li>
+            <li class="li-navbar"><a href="signin.html" class="a">Pendaftaran</a></li>
+            <li class="li-navbar"><a href="apotekterdekat.html" class="a">Apotik</a></li>
+            <li class="li-navbar"><a href="katalogbelanja.html" class="a">Katalog</a></li>
+        </ul>
+    </div>
+
+    <div class="signin-container">
+        <div class="signin-form">
+            <h2>Lengkapi Alamat Google</h2>
+            <p>Masukkan alamat lengkap agar akun Google Anda bisa dipakai untuk mencari apotek terdekat.</p>
+
+            <section class="google-address-section google-address-page">
+                <div id="googleAddressMessage" class="google-address-message" style="display: none;"></div>
+
+                <form id="googleAddressForm">
+                    <div class="form-group">
+                        <label for="googleFullname">Nama Lengkap</label>
+                        <input type="text" id="googleFullname" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="googleEmail">Email</label>
+                        <input type="email" id="googleEmail" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="googleProvince">Provinsi</label>
+                        <select id="googleProvince" required>
+                            <option value="">Pilih Provinsi</option>
+                            <option value="Aceh">Aceh</option>
+                            <option value="Sumatera Utara">Sumatera Utara</option>
+                            <option value="Sumatera Barat">Sumatera Barat</option>
+                            <option value="Riau">Riau</option>
+                            <option value="Jambi">Jambi</option>
+                            <option value="Sumatera Selatan">Sumatera Selatan</option>
+                            <option value="Bengkulu">Bengkulu</option>
+                            <option value="Lampung">Lampung</option>
+                            <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+                            <option value="Kepulauan Riau">Kepulauan Riau</option>
+                            <option value="DKI Jakarta">DKI Jakarta</option>
+                            <option value="Jawa Barat">Jawa Barat</option>
+                            <option value="Jawa Tengah">Jawa Tengah</option>
+                            <option value="DI Yogyakarta">DI Yogyakarta</option>
+                            <option value="Jawa Timur">Jawa Timur</option>
+                            <option value="Banten">Banten</option>
+                            <option value="Bali">Bali</option>
+                            <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                            <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                            <option value="Kalimantan Barat">Kalimantan Barat</option>
+                            <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                            <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                            <option value="Kalimantan Timur">Kalimantan Timur</option>
+                            <option value="Kalimantan Utara">Kalimantan Utara</option>
+                            <option value="Sulawesi Utara">Sulawesi Utara</option>
+                            <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                            <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                            <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                            <option value="Gorontalo">Gorontalo</option>
+                            <option value="Sulawesi Barat">Sulawesi Barat</option>
+                            <option value="Maluku">Maluku</option>
+                            <option value="Maluku Utara">Maluku Utara</option>
+                            <option value="Papua Barat">Papua Barat</option>
+                            <option value="Papua">Papua</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="googleCity">Kota / Kabupaten</label>
+                        <select id="googleCity" required>
+                            <option value="">Pilih Kota / Kabupaten</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="googleDistrict">Kecamatan</label>
+                        <select id="googleDistrict" required>
+                            <option value="">Pilih Kecamatan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="googleAddress">Alamat Lengkap</label>
+                        <input type="text" id="googleAddress" required placeholder="Jalan, nomor rumah, gedung, dll">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="googlePostalCode">Kode Pos</label>
+                        <input type="text" id="googlePostalCode" required placeholder="Masukkan kode pos Anda">
+                    </div>
+
+                    <button type="submit" id="googleAddressButton" class="signin-btn">Simpan dan Lanjutkan</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
